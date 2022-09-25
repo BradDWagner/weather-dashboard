@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/style.css" />
   <title>Weather Dashboard</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
         </h1>
     </header>
     <main>
-        <div class="container row">
+        <div class="container-fluid row">
             <div class="col-3">
                 <form>
                     <label for="city-search">Search for a City:</label>
@@ -34,15 +35,45 @@
                     <p id="today-wind">Wind 6.67 MPH</p>
                     <p id="today-humid">Humidty: 46%</p>
                 </div>
-                <div id="5day">
+                <div id="five-day">
                     <h2>5-Day Forecast:</h2>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2"> day1</div>
-                            <div class="col-2"> day2</div>
-                            <div class="col-2"> day3</div>
-                            <div class="col-2"> day4</div>
-                            <div class="col-2"> day5</div>
+                    <div class="container-fluid">
+                        <div class="row justify-content-around">
+                            <div class="col-2 mx-2">
+                                <h3 id="five-day-date0"> date</h3>
+                                <img id="five-day-img0">
+                                <p id="five-day-temp0">Temp</p>
+                                <p id="five-day-wind0">Wind</p>
+                                <p id="five-day-humid0">humidity</p>
+                            </div>
+                            <div class="col-2 mx-2">
+                                <h3 id="five-day-date1"> date</h3>
+                                <img id="five-day-img1">
+                                <p id="five-day-temp1">Temp</p>
+                                <p id="five-day-wind1">Wind</p>
+                                <p id="five-day-humid1">humidity</p>
+                            </div>
+                            <div class="col-2 mx-2">
+                                <h3 id="five-day-date2"> date</h3>
+                                <img id="five-day-img2">
+                                <p id="five-day-temp2">Temp</p>
+                                <p id="five-day-wind2">Wind</p>
+                                <p id="five-day-humid2">humidity</p>
+                            </div>
+                            <div class="col-2 mx-2">
+                                <h3 id="five-day-date3"> date</h3>
+                                <img id="five-day-img3">
+                                <p id="five-day-temp3">Temp</p>
+                                <p id="five-day-wind3">Wind</p>
+                                <p id="five-day-humid3">humidity</p>
+                            </div>
+                            <div class="col-2 mx-2">
+                                <h3 id="five-day-date4"> date</h3>
+                                <img id="five-day-img4">
+                                <p id="five-day-temp4">Temp</p>
+                                <p id="five-day-wind4">Wind</p>
+                                <p id="five-day-humid4">humidity</p>
+                            </div>
                         </div>
                     </div>
                     
