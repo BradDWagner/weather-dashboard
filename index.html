@@ -9,7 +9,7 @@
   <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>
+    <header class="text-center bg-primary">
         <h1>
             Weather Dashboard
         </h1>
@@ -19,17 +19,17 @@
             <div class="col-3">
                 <form>
                     <label for="city-search">Search for a City:</label>
-                    <input type="text" class="form-control" id="city-search">
+                    <input type="text" class="form-control mb-2" id="city-search">
                     <button class="btn btn-primary" id="search-button">Search</button>
                 </form>
                 <hr>
                 <div id="previous-search"></div>
             </div>
-            <div class="col-9">
-                <div id="today">
+            <div class="col-9 d-none" id="hide-on-start">
+                <div id="today" class="border border-secondary p-4">
                     <div class="d-inline"> 
-                        <h1 id="today-loc">Seattle (9/24/2022</h1>
-                        <img id="today-icon">
+                        <h1 id="today-loc" class="d-inline">Seattle (9/24/2022</h1>
+                        <img id="today-icon" class="d-inline">
                     </div>
                     <p id="today-temp">Temp: 74.01F</p>
                     <p id="today-wind">Wind 6.67 MPH</p>
@@ -39,35 +39,35 @@
                     <h2>5-Day Forecast:</h2>
                     <div class="container-fluid">
                         <div class="row justify-content-around">
-                            <div class="col-2 mx-2">
+                            <div class="col-2 mx-2 bg-info">
                                 <h3 id="five-day-date0"> date</h3>
                                 <img id="five-day-img0">
                                 <p id="five-day-temp0">Temp</p>
                                 <p id="five-day-wind0">Wind</p>
                                 <p id="five-day-humid0">humidity</p>
                             </div>
-                            <div class="col-2 mx-2">
+                            <div class="col-2 mx-2 bg-info">
                                 <h3 id="five-day-date1"> date</h3>
                                 <img id="five-day-img1">
                                 <p id="five-day-temp1">Temp</p>
                                 <p id="five-day-wind1">Wind</p>
                                 <p id="five-day-humid1">humidity</p>
                             </div>
-                            <div class="col-2 mx-2">
+                            <div class="col-2 mx-2 bg-info">
                                 <h3 id="five-day-date2"> date</h3>
                                 <img id="five-day-img2">
                                 <p id="five-day-temp2">Temp</p>
                                 <p id="five-day-wind2">Wind</p>
                                 <p id="five-day-humid2">humidity</p>
                             </div>
-                            <div class="col-2 mx-2">
+                            <div class="col-2 mx-2 bg-info">
                                 <h3 id="five-day-date3"> date</h3>
                                 <img id="five-day-img3">
                                 <p id="five-day-temp3">Temp</p>
                                 <p id="five-day-wind3">Wind</p>
                                 <p id="five-day-humid3">humidity</p>
                             </div>
-                            <div class="col-2 mx-2">
+                            <div class="col-2 mx-2 bg-info">
                                 <h3 id="five-day-date4"> date</h3>
                                 <img id="five-day-img4">
                                 <p id="five-day-temp4">Temp</p>

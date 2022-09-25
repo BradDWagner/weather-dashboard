@@ -30,6 +30,7 @@ function showHistory (){
     prevSearches.on("click", function(event) {
         event.preventDefault;
         var prevCity = $(event.target).text();
+        $("#hide-on-start").removeClass("d-none")
         todaysWeather(prevCity);
         fiveDayWeather(prevCity);
         
@@ -41,6 +42,7 @@ searchButton.on("click", function(event) {
     var selectedCity = citySearch.val();
     searchHistoryArray.push(selectedCity);
     localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistoryArray))
+    $("#hide-on-start").removeClass("d-none")
     todaysWeather(selectedCity);
     fiveDayWeather(selectedCity);
     showHistory();
