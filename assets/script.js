@@ -8,38 +8,44 @@ var citySearch = $("#city-search")
 var searchButton = $("#search-button")
 
 var searchHistoryArray = [];
+var storedSearchHistory =[]
 
 function init (){
-    searchHistoryArray = JSON.parse(localStorage.getItem("weatherSearchHistory"));
-    console.log(localStorage.getItem("weatherSearchHistory"))
-    console.log(searchHistoryArray)
-    if (searchHistoryArray !== null){
+    storedSearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
+    console.log(storedSearchHistory)
+    if (storedSearchHistory !== null){
+        searchHistoryArray = storedSearchHistory
         showHistory()
     }
 }
 init()
 
 function showHistory (){
+    $("#previous-search").empty();
     for (i=0; i<storedSearchHistory.length; i++) {
-        var button = $("<button>").text(storedSearchHistory[i]);
-        $("previous-search").append(button);
+        var button = $("<button></button>").text(storedSearchHistory[i]).addClass("history-button btn btn-secondary");
+        $("#previous-search").append(button);
     }
+    var prevSearches = $(".history-button");
+    prevSearches.on("click", function(event) {
+        event.preventDefault;
+        var prevCity = $(event.target).text();
+        todaysWeather(prevCity);
+        fiveDayWeather(prevCity);
+        
+    })
 }
 
-
-searchButton.on("click", getWeatherData)
-
-function getWeatherData(event) {
+searchButton.on("click", function(event) {
     event.preventDefault();
     var selectedCity = citySearch.val();
-    console.log(selectedCity);
-    console.log(searchHistoryArray);
     searchHistoryArray.push(selectedCity);
     localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistoryArray))
     todaysWeather(selectedCity);
     fiveDayWeather(selectedCity);
+    showHistory();
+})
 
-}
 
 function todaysWeather (city){
     fetch(todayUrl + city + "&units=imperial&appid=" + APIkey)
