@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Weather Dashboard
+        </h1>
+    </header>
+    <main>
+        <div class="container row">
+            <div class="col-3">
+                <form>
+                    <label for="city-search">Search for a City:</label>
+                    <input type="text" class="form-control" id="city-search">
+                    <button class="btn btn-primary" id="search-button">Search</button>
+                </form>
+                <hr>
+                <div id="previous-search"></div>
+            </div>
+            <div class="col-9">
+                <div id="today">
+                    <div class="d-inline"> 
+                        <h1 id="today-loc">Seattle (9/24/2022</h1>
+                        <img id="today-icon">
+                    </div>
+                    <p id="today-temp">Temp: 74.01F</p>
+                    <p id="today-wind">Wind 6.67 MPH</p>
+                    <p id="today-humid">Humidty: 46%</p>
+                </div>
+                <div id="5day">
+                    <h2>5-Day Forecast:</h2>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2"> day1</div>
+                            <div class="col-2"> day2</div>
+                            <div class="col-2"> day3</div>
+                            <div class="col-2"> day4</div>
+                            <div class="col-2"> day5</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       
+       
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
+</body>
