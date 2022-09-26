@@ -27,8 +27,8 @@ function showHistory (){
     //select div where buttons will be populated
     $("#previous-search").empty();
     //loop through each stored search item and create a button
-    for (i=0; i<storedSearchHistory.length; i++) {
-        var button = $("<button></button>").text(storedSearchHistory[i]).addClass("history-button btn btn-secondary");
+    for (i=0; i<searchHistoryArray.length; i++) {
+        var button = $("<button></button>").text(searchHistoryArray[i]).addClass("history-button btn btn-secondary");
         $("#previous-search").append(button);
     }
     //add event handlers to buttons
@@ -63,21 +63,22 @@ function todaysWeather (city){
         //if the api response is not ok return from function
         if(!response.ok) {
             return
-         //if api response is ok and searchHistoryArray does not already contain the selected value, add the selected city to the array, update local storage, and update search history
-        } else if (!searchHistoryArray.includes(selectedCity)) {
-            searchHistoryArray.push(selectedCity);
-            localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistoryArray));
-            showHistory();
         }
         $("#hide-on-start").removeClass("d-none");
         return response.json();
     })
     .then(function (data) {
+        //if searchHistoryArray does not already contain the selected value, add the selected city to the array (using data.name to normalize capitalization), update local storage, and update search history
+        if (!searchHistoryArray.includes(data.name)) {
+            searchHistoryArray.push(data.name);
+            localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistoryArray));
+            showHistory();
+        }
         //access each of the text fields via id and set them according to the data response
-        $("#today-loc").text(data.name +" "+ moment(data.dt, "X").format("L"));
+        $("#today-loc").text(data.name +" ("+ moment(data.dt, "X").format("L") +")");
         //plugs in the icon id to the icon url structure 
         $("#today-icon").attr("src", iconUrlStart + data.weather[0].icon + iconUrlEnd)
-        $("#today-temp").text("Temp: " + data.main.temp + "F");
+        $("#today-temp").text("Temp: " + data.main.temp + "°F");
         $("#today-wind").text("Wind: " + data.wind.speed + " MPH");
         $("#today-humid").text("Humidity: " + data.main.humidity + " %");
     })
@@ -100,8 +101,8 @@ function fiveDayWeather (city){
             var j = 7 + (8*i)
             $("#five-day-date" + i).text( moment(data.list[j].dt, "X").format("L"));
             $("#five-day-img" + i).attr("src", iconUrlStart + data.list[j].weather[0].icon + iconUrlEnd);
-            $("#five-day-temp" + i).text("Temp: " + data.list[j].main.temp +"F");
-            $("#five-day-wind" + i).text("Wind: " + data.list[j].wind.speed + "MPH");
+            $("#five-day-temp" + i).text("Temp: " + data.list[j].main.temp +"°F");
+            $("#five-day-wind" + i).text("Wind: " + data.list[j].wind.speed + " MPH");
             $("#five-day-humid" + i).text("Humidity: " + data.list[j].main.humidity + "%");
         }
     })

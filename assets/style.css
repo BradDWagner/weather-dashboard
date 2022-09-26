@@ -6,3 +6,7 @@
 form label{
     font-size: 25px;
 }
+
+img {
+    max-height: 75px;
+}
