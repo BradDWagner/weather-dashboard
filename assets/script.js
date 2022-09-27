@@ -1,7 +1,7 @@
 var todayUrl = "https://api.openweathermap.org/data/2.5/weather?q=";
 var forcastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=";
 var APIkey = "172ecdfeb9ed3b4659678bbef29c9bdf";
-var iconUrlStart = "http://openweathermap.org/img/wn/"
+var iconUrlStart = "https://openweathermap.org/img/wn/"
 var iconUrlEnd = "@2x.png"
 
 var citySearch = $("#city-search")

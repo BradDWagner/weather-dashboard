@@ -7,6 +7,7 @@ This webpage provides the user with a simple tool to search for a city and view 
 N/A
 
 ## Usage
+Deployed application can be found [here](https://braddwagner.github.io/weather-dashboard/)
 Upon opening the webpage for the first time the user will be presented with a simple search bar.
 ![A screenshot of the page at start up](./assets/images/start-screenshot.png)
 The user can then search for any city of their choice and the weather forcast will populate and their selected city will appear below the search bar for easy access to get the weather later. The user will be presented with the weather forcast for the day as well as a 5 day forcast.
